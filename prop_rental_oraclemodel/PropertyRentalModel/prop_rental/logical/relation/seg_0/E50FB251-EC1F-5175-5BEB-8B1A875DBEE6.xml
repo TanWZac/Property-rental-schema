@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="OWNER_PROPERTY" directorySegmentName="seg_0" id="E50FB251-EC1F-5175-5BEB-8B1A875DBEE6">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:24:59 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<sourcePk>0B8ECA05-0878-5307-F38B-EEA3FEF7D978</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>owns</nameOnSource>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6B407AD5-2E57-874B-D2EB-611CB8CB680E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7CA442E7-204F-0E47-62F1-90664488407F</targetEntity>
+<transferable>true</transferable>
+</Relation>

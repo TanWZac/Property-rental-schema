@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="68AF167C-1D6C-5920-CE0B-5B85AC175ECB" containerWithKeyObject="FEB11440-4617-B5A8-4CDC-494645ADAE91" localFKIndex="44766B10-AA31-F1B8-AF39-024BFDBF2030" name="TENANT_RENTAL">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:54:06 UTC</createdTime>
+<generatorID>A0E1CF08-B7F9-FF92-5D6E-8E5159C40009</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<referredTableLongName>TEANANT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6C18A9AC-64D4-AAD8-08DD-A1ED3BA381EE</referredTableID>
+<keyObject>75956C8E-82AD-DDB5-2F58-75AACE94DF72</keyObject>
+<referredKeyID>75956C8E-82AD-DDB5-2F58-75AACE94DF72</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tenant_no</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

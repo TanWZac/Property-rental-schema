@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D9699D95-5DD4-3DEC-F496-1427EB683C0C" name="MAINTENANCE">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:37:39 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="maint_datetime" id="C2C75967-4336-6694-C237-D2C790E3F269">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:37:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance datetime]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prop_no" id="3C34F681-87AD-A1DF-E0A1-657C3021CBE5">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:40:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[property identifier]]></commentInRDBMS>
+<generatorID>9FDDEB14-0940-6C50-26E5-4E837923E276</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<referedAttribute>0D9EDF6E-5E4C-87AF-DE50-F663A88A3ABB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="maint_desc" id="D6593FAD-AFF4-79F3-6AA9-040D98037F6E">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:38:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance description]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="maint_cost" id="8E2DEC8E-3CA9-5A8C-E03B-A0DB981EC01D">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:39:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance cost]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="64B2912B-372C-A24B-A44D-5CD0B6EFD7D2" name="MAINTENANCE PK">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:38:17 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C2C75967-4336-6694-C237-D2C790E3F269</attributeRef>
+<attributeRef>3C34F681-87AD-A1DF-E0A1-657C3021CBE5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

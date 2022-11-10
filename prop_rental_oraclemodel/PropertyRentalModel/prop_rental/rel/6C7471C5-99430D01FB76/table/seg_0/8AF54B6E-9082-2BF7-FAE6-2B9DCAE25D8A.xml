@@ -1,0 +1,184 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8AF54B6E-9082-2BF7-FAE6-2B9DCAE25D8A" name="DAMAGE">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<generatorID>1D62E69E-E6EA-2453-3CBF-C3A63DC41AFA</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dam_id" id="B1D40014-D087-5C0E-4D1F-DA254CD726EA">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Surrogate key as identifier for damage datetime]]></commentInRDBMS>
+<generatorID>E8B22BF1-5EF8-D427-DBA0-6910AEEF38B9</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rent_id" id="2A8D7B70-8349-44B6-7719-E938880299D0">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[surrogate key as identifier for reat start date]]></commentInRDBMS>
+<generatorID>DAD357E9-E181-A131-6040-BF2AED7A6158</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC2CD153-3743-C87E-F942-3AF0BEC9996D" referredColumn="DCB8544D-95AE-B251-FC27-A009EDE372ED"/>
+</associations>
+</Column>
+<Column name="dam_date" id="13D0C181-92FC-E262-3D42-594231E58AAF">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Damage date]]></commentInRDBMS>
+<generatorID>C8100450-E3D2-058D-7B4F-3217BA1568F6</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dam_time" id="2CB1D230-3CFD-79EC-6F25-D6CDD94D3678">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Damage time]]></commentInRDBMS>
+<generatorID>AE93BC96-A51B-41DF-7F02-E537AC4711EB</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dam_type" id="2D996EDE-567B-DFF9-1D68-0BF28ACB5B15">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Damage type]]></commentInRDBMS>
+<generatorID>95E40BD2-E9FA-733D-D81D-7E4399A8521D</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dam_cost" id="B99F8DC2-36D9-2E03-1C5F-A3F3CD3FF5DE">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cost of damage]]></commentInRDBMS>
+<generatorID>6376BD18-5122-F587-E4A7-9B64A3B2E7CE</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pay_no" id="D786C043-D8FE-5334-21DB-5EF968D81192">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[payment identifier]]></commentInRDBMS>
+<generatorID>2740320A-E267-4491-4C9E-0487B1944582</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0EE23C33-E759-5054-E4EA-32CB2741163F" referredColumn="CA29D80E-9F22-3CA1-A282-8CA3D150069A"/>
+</associations>
+</Column>
+<Column name="prop_no" id="1C8279B2-E4A8-2BF5-AC23-C05E204CA055">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:29:04 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9A1B01B3-78C0-7D90-EAB4-87095CFA19B2" name="DAMAGE_PK">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<generatorID>E01DB0A4-4D95-0FA0-21BA-666DE6965059</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1D40014-D087-5C0E-4D1F-DA254CD726EA"/>
+<colUsage columnID="2A8D7B70-8349-44B6-7719-E938880299D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02D53C78-8AEF-54CA-403D-6AB4BFF81175" name="NK_Damage">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<generatorID>3439C817-E0ED-2611-22DE-601F849B1E11</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13D0C181-92FC-E262-3D42-594231E58AAF"/>
+<colUsage columnID="2CB1D230-3CFD-79EC-6F25-D6CDD94D3678"/>
+<colUsage columnID="2A8D7B70-8349-44B6-7719-E938880299D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6EB4938-4C0B-EDDC-8817-4908D892ED7E" name="DAMAGE__IDX">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>7B57C71F-9804-D81B-6FA2-B6C96774635C</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="D786C043-D8FE-5334-21DB-5EF968D81192"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E254A71-7B38-FD41-0153-27488CD609B2" name="Damage_Accountiblity">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<generatorID>78683CA7-BE61-1084-E8AC-97E147E3000D</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A8D7B70-8349-44B6-7719-E938880299D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65B49C07-9556-98FA-E1B1-6B80C91F855C" name="Damage_Payment">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:27:32 UTC</createdTime>
+<generatorID>7B57C71F-9804-D81B-6FA2-B6C96774635C</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D786C043-D8FE-5334-21DB-5EF968D81192"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="66375B66-4CE3-D77B-333B-36AE93634504" name="RENT">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:02:49 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rent_id" id="8CF96AAE-6B54-0665-58B8-4E2B7916220A">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 07:57:01 UTC</createdTime>
+<commentInRDBMS><![CDATA[surrogate key as identifier for reat start date]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prop_no" id="3CD53F6E-DC6A-5955-3A3B-86B4099EFEC8">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:27:40 UTC</createdTime>
+<commentInRDBMS><![CDATA[property identifier]]></commentInRDBMS>
+<generatorID>C0630712-9B75-0CF2-72F4-776AB0F02444</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<referedAttribute>0D9EDF6E-5E4C-87AF-DE50-F663A88A3ABB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_startdate" id="242398DF-79F1-9CC5-2A77-BED0AB568311">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:03:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[rent identifier]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_weekly_rate" id="2DE61EAC-BE80-D02F-9B54-7D1A268F367A">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:03:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[rental weekly rate]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_bond" id="4B31B235-8D33-9945-2C8D-0515B2C10796">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:05:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[rent bond]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_period" id="0C8B36EA-D659-4D68-56A4-9AC138A1A092">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:07:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[rent lease period]]></commentInRDBMS>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_no" id="B012AD3F-FDD1-6D81-28C8-1AED3899AD5A">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:34:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[tenant identifier]]></commentInRDBMS>
+<generatorID>A0E1CF08-B7F9-FF92-5D6E-8E5159C40009</generatorID>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<referedAttribute>3A41042F-DDAB-8AAB-4EBF-D866B6ECE499</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="969E272F-6FE9-22BF-2621-BA287221E336" name="RENT PK">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-04-27 09:03:47 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8CF96AAE-6B54-0665-58B8-4E2B7916220A</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="C85902FA-A11A-31E4-F61A-1E3DC1158BD9" name="NK_Rent">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:00:07 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="false"/>
+</engineerTo>
+<newElementsIDs>242398DF-79F1-9CC5-2A77-BED0AB568311,C0630712-9B75-0CF2-72F4-776AB0F02444</newElementsIDs>
+<usedAttributes>
+<attributeRef>242398DF-79F1-9CC5-2A77-BED0AB568311</attributeRef>
+<attributeRef>3CD53F6E-DC6A-5955-3A3B-86B4099EFEC8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

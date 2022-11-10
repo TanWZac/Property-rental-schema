@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Damage_Accountiblity" directorySegmentName="seg_0" id="78683CA7-BE61-1084-E8AC-97E147E3000D">
+<createdBy>wtan0053</createdBy>
+<createdTime>2020-05-01 08:07:39 UTC</createdTime>
+<ownerDesignName>prop_rental</ownerDesignName>
+<engineerTo>
+<item key="6C7471C5-A433-16E6-3900-99430D01FB76" value="true"/>
+</engineerTo>
+<sourcePk>969E272F-6FE9-22BF-2621-BA287221E336</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>responsible</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>66375B66-4CE3-D77B-333B-36AE93634504</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1D62E69E-E6EA-2453-3CBF-C3A63DC41AFA</targetEntity>
+<transferable>true</transferable>
+</Relation>
