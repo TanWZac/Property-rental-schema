@@ -1,0 +1,567 @@
+
+Error starting at line : 8 in command -
+DROP TABLE OWNER
+Error report -
+ORA-02449: unique/primary keys in table referenced by foreign keys
+02449. 00000 -  "unique/primary keys in table referenced by foreign keys"
+*Cause:    An attempt was made to drop a table with unique or
+           primary keys referenced by foreign keys in another table.
+*Action:   Before performing the above operations the table, drop the
+           foreign key constraints in other tables. You can see what
+           constraints are referencing a table by issuing the following
+           command:
+           SELECT * FROM USER_CONSTRAINTS WHERE TABLE_NAME = "tabnam";
+
+Table DAMAGE dropped.
+
+
+Table MAINTENANCE dropped.
+
+
+Table PAYMENT dropped.
+
+
+Error starting at line : 12 in command -
+DROP TABLE PROPERTY
+Error report -
+ORA-02449: unique/primary keys in table referenced by foreign keys
+02449. 00000 -  "unique/primary keys in table referenced by foreign keys"
+*Cause:    An attempt was made to drop a table with unique or
+           primary keys referenced by foreign keys in another table.
+*Action:   Before performing the above operations the table, drop the
+           foreign key constraints in other tables. You can see what
+           constraints are referencing a table by issuing the following
+           command:
+           SELECT * FROM USER_CONSTRAINTS WHERE TABLE_NAME = "tabnam";
+
+Table RENT dropped.
+
+
+Table TEANANT dropped.
+
+SQL> SPOOL prop_rental_schema_output.txt
+SQL> 
+SQL> CREATE TABLE damage (
+  2      dam_id     NUMBER(7) NOT NULL,
+  3      rent_id    NUMBER(7) NOT NULL,
+  4      dam_date   DATE NOT NULL,
+  5      dam_time   DATE NOT NULL,
+  6      dam_type   VARCHAR2(50) NOT NULL,
+  7      dam_cost   NUMBER(6, 2) NOT NULL,
+  8      pay_no     NUMBER(6, 2),
+  9      prop_no    NUMBER NOT NULL
+ 10  );
+
+Table DAMAGE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.dam_id IS
+  2      'Surrogate key as identifier for damage datetime';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.rent_id IS
+  2      'surrogate key as identifier for reat start date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.dam_date IS
+  2      'Damage date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.dam_time IS
+  2      'Damage time';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.dam_type IS
+  2      'Damage type';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.dam_cost IS
+  2      'Cost of damage';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN damage.pay_no IS
+  2      'payment identifier';
+
+Comment created.
+
+SQL> 
+SQL> CREATE UNIQUE INDEX damage__idx ON
+  2      damage (
+  3          pay_no
+  4      ASC );
+
+INDEX DAMAGE__IDX created.
+
+SQL> 
+SQL> ALTER TABLE damage ADD CONSTRAINT damage_pk PRIMARY KEY ( dam_id,
+  2                                                            rent_id );
+
+Table DAMAGE altered.
+
+SQL> 
+SQL> ALTER TABLE damage
+  2      ADD CONSTRAINT nk_damage UNIQUE ( dam_date,
+  3                                        dam_time,
+  4                                        rent_id );
+
+Table DAMAGE altered.
+
+SQL> 
+SQL> CREATE TABLE maintenance (
+  2      maint_datetime   DATE NOT NULL,
+  3      prop_no          NUMBER(7) NOT NULL,
+  4      maint_desc       VARCHAR2(50) NOT NULL,
+  5      maint_cost       NUMBER(6, 2) NOT NULL
+  6  );
+
+Table MAINTENANCE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_datetime IS
+  2      'Maintenance datetime';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.prop_no IS
+  2      'property identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_desc IS
+  2      'Maintenance description';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_cost IS
+  2      'Maintenance cost';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE maintenance ADD CONSTRAINT maintenance_pk PRIMARY KEY ( maint_datetime
+  2  ,
+  3                                                                      prop_no );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> CREATE TABLE owner (
+  2      owner_no        NUMBER(7) NOT NULL,
+  3      owner_title     CHAR(20) NOT NULL,
+  4      owner_givname   CHAR(10) NOT NULL,
+  5      owner_famname   CHAR(20) NOT NULL,
+  6      owner_address   CHAR(50)
+  7  );
+
+Error starting at line : 86 in command -
+CREATE TABLE owner (
+    owner_no        NUMBER(7) NOT NULL,
+    owner_title     CHAR(20) NOT NULL,
+    owner_givname   CHAR(10) NOT NULL,
+    owner_famname   CHAR(20) NOT NULL,
+    owner_address   CHAR(50)
+)
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_no IS
+  2      'Owner identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_title IS
+  2      'owner title';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_givname IS
+  2      'owner given name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_famname IS
+  2      'owner family  name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_address IS
+  2      'owner address';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE owner ADD CONSTRAINT owner_pk PRIMARY KEY ( owner_no );
+
+Error starting at line : 109 in command -
+ALTER TABLE owner ADD CONSTRAINT owner_pk PRIMARY KEY ( owner_no )
+Error report -
+ORA-02260: table can have only one primary key
+02260. 00000 -  "table can have only one primary key"
+*Cause:    Self-evident.
+*Action:   Remove the extra primary key.
+SQL> 
+SQL> CREATE TABLE payment (
+  2      pay_no                 NUMBER(6, 2) NOT NULL,
+  3      pay_date               DATE NOT NULL,
+  4      pay_amount             NUMBER(6, 2) NOT NULL,
+  5      pay_paidby             VARCHAR2(50) NOT NULL,
+  6      pay_type               CHAR(6 CHAR),
+  7      rent_lease_startdate   DATE NOT NULL,
+  8      prop_no                NUMBER(7) NOT NULL,
+  9      rent_id                NUMBER(7) NOT NULL
+ 10  );
+
+Table PAYMENT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.pay_no IS
+  2      'payment identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.pay_date IS
+  2      'payment date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.pay_amount IS
+  2      'payment amount';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.pay_paidby IS
+  2      'payment by whom';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.pay_type IS
+  2      'payment type';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.rent_lease_startdate IS
+  2      'rent identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.prop_no IS
+  2      'property identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.rent_id IS
+  2      'surrogate key as identifier for reat start date';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE payment ADD CONSTRAINT payment_pk PRIMARY KEY ( pay_no );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> CREATE TABLE property (
+  2      prop_no        NUMBER(7) NOT NULL,
+  3      prop_address   CHAR(50) NOT NULL,
+  4      prop_value     NUMBER(10) NOT NULL,
+  5      owner_no       NUMBER(7) NOT NULL
+  6  );
+
+Error starting at line : 148 in command -
+CREATE TABLE property (
+    prop_no        NUMBER(7) NOT NULL,
+    prop_address   CHAR(50) NOT NULL,
+    prop_value     NUMBER(10) NOT NULL,
+    owner_no       NUMBER(7) NOT NULL
+)
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_no IS
+  2      'property identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_address IS
+  2      'property address';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_value IS
+  2      'property value';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.owner_no IS
+  2      'Owner identifier';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE property ADD CONSTRAINT property_pk PRIMARY KEY ( prop_no );
+
+Error starting at line : 167 in command -
+ALTER TABLE property ADD CONSTRAINT property_pk PRIMARY KEY ( prop_no )
+Error report -
+ORA-02260: table can have only one primary key
+02260. 00000 -  "table can have only one primary key"
+*Cause:    Self-evident.
+*Action:   Remove the extra primary key.
+SQL> 
+SQL> CREATE TABLE rent (
+  2      prop_no                NUMBER(7) NOT NULL,
+  3      rent_lease_startdate   DATE NOT NULL,
+  4      rent_weekly_rate       NUMBER(6, 2) NOT NULL,
+  5      rent_bond              NUMBER(10) NOT NULL,
+  6      rent_lease_period      DATE NOT NULL,
+  7      tenant_no              NUMBER(7) NOT NULL,
+  8      rent_id                NUMBER(7) NOT NULL
+  9  );
+
+Table RENT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.prop_no IS
+  2      'property identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_lease_startdate IS
+  2      'rent identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_weekly_rate IS
+  2      'rental weekly rate';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_bond IS
+  2      'rent bond';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_lease_period IS
+  2      'rent lease period';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.tenant_no IS
+  2      'tenant identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_id IS
+  2      'surrogate key as identifier for reat start date';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE rent ADD CONSTRAINT rent_pk PRIMARY KEY ( rent_id );
+
+Table RENT altered.
+
+SQL> 
+SQL> ALTER TABLE rent ADD CONSTRAINT nk_rent UNIQUE ( rent_lease_startdate,
+  2                                                   prop_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> CREATE TABLE teanant (
+  2      tenant_no        NUMBER(7) NOT NULL,
+  3      tenant_title     VARCHAR2(10) NOT NULL,
+  4      tenant_famname   VARCHAR2(10) NOT NULL,
+  5      tenant_givname   VARCHAR2(10) NOT NULL,
+  6      tenant_phone     CHAR(8) NOT NULL,
+  7      tenant_address   VARCHAR2(50) NOT NULL
+  8  );
+
+Table TEANANT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_no IS
+  2      'tenant identifier';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_title IS
+  2      'tenant title';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_famname IS
+  2      'tenant family name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_givname IS
+  2      'tenant given name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_phone IS
+  2      'tenant phone number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN teanant.tenant_address IS
+  2      'tenant address';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE teanant ADD CONSTRAINT teanant_pk PRIMARY KEY ( tenant_no );
+
+Table TEANANT altered.
+
+SQL> 
+SQL> ALTER TABLE damage
+  2      ADD CONSTRAINT damage_accountiblity FOREIGN KEY ( rent_id )
+  3          REFERENCES rent ( rent_id );
+
+Table DAMAGE altered.
+
+SQL> 
+SQL> ALTER TABLE damage
+  2      ADD CONSTRAINT damage_payment FOREIGN KEY ( pay_no )
+  3          REFERENCES payment ( pay_no );
+
+Table DAMAGE altered.
+
+SQL> 
+SQL> ALTER TABLE property
+  2      ADD CONSTRAINT owner_property FOREIGN KEY ( owner_no )
+  3          REFERENCES owner ( owner_no );
+
+Error starting at line : 242 in command -
+ALTER TABLE property
+    ADD CONSTRAINT owner_property FOREIGN KEY ( owner_no )
+        REFERENCES owner ( owner_no )
+Error report -
+ORA-02275: such a referential constraint already exists in the table
+02275. 00000 -  "such a referential constraint already exists in the table"
+*Cause:    Self-evident.
+*Action:   Remove the extra constraint.
+SQL> 
+SQL> ALTER TABLE maintenance
+  2      ADD CONSTRAINT property_maintenance FOREIGN KEY ( prop_no )
+  3          REFERENCES property ( prop_no );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> ALTER TABLE rent
+  2      ADD CONSTRAINT rent_property FOREIGN KEY ( prop_no )
+  3          REFERENCES property ( prop_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> ALTER TABLE payment
+  2      ADD CONSTRAINT rental_payment FOREIGN KEY ( rent_id )
+  3          REFERENCES rent ( rent_id );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> ALTER TABLE rent
+  2      ADD CONSTRAINT tenant_rental FOREIGN KEY ( tenant_no )
+  3          REFERENCES teanant ( tenant_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> -- Oracle SQL Developer Data Modeler Summary Report: 
+SQL> -- 
+SQL> -- CREATE TABLE                             7
+SQL> -- CREATE INDEX                             1
+SQL> -- ALTER TABLE                             16
+SQL> -- CREATE VIEW                              0
+SQL> -- ALTER VIEW                               0
+SQL> -- CREATE PACKAGE                           0
+SQL> -- CREATE PACKAGE BODY                      0
+SQL> -- CREATE PROCEDURE                         0
+SQL> -- CREATE FUNCTION                          0
+SQL> -- CREATE TRIGGER                           0
+SQL> -- ALTER TRIGGER                            0
+SQL> -- CREATE COLLECTION TYPE                   0
+SQL> -- CREATE STRUCTURED TYPE                   0
+SQL> -- CREATE STRUCTURED TYPE BODY              0
+SQL> -- CREATE CLUSTER                           0
+SQL> -- CREATE CONTEXT                           0
+SQL> -- CREATE DATABASE                          0
+SQL> -- CREATE DIMENSION                         0
+SQL> -- CREATE DIRECTORY                         0
+SQL> -- CREATE DISK GROUP                        0
+SQL> -- CREATE ROLE                              0
+SQL> -- CREATE ROLLBACK SEGMENT                  0
+SQL> -- CREATE SEQUENCE                          0
+SQL> -- CREATE MATERIALIZED VIEW                 0
+SQL> -- CREATE MATERIALIZED VIEW LOG             0
+SQL> -- CREATE SYNONYM                           0
+SQL> -- CREATE TABLESPACE                        0
+SQL> -- CREATE USER                              0
+SQL> -- 
+SQL> -- DROP TABLESPACE                          0
+SQL> -- DROP DATABASE                            0
+SQL> -- 
+SQL> -- REDACTION POLICY                         0
+SQL> -- TSDP POLICY                              0
+SQL> -- 
+SQL> -- ORDS DROP SCHEMA                         0
+SQL> -- ORDS ENABLE SCHEMA                       0
+SQL> -- ORDS ENABLE OBJECT                       0
+SQL> -- 
+SQL> -- ERRORS                                   0
+SQL> -- WARNINGS                                 0
+SQL> SPOOL off
+SQL> set echo off
